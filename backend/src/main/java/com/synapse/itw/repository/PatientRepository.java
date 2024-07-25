@@ -1,14 +1,15 @@
 package com.synapse.itw.repository;
 
-import com.synapse.itw.model.Allergy;
-import com.synapse.itw.model.Patient;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import com.synapse.itw.model.Allergy;
+import com.synapse.itw.model.Patient;
 
 @Repository
 public class PatientRepository {

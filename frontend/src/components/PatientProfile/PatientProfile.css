@@ -1,28 +1,119 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
 }
 
 .container {
-    max-width: 600px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: #4a90e2;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #4a90e2;
 }
 
 .patient-profile {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
+.search-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.allergy-heading{
+  color: #427dc0;
+}
+.dropdown {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background: #f4f4f4;
+}
+
+.add-button {
+  padding: 5px 10px;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.add-button:hover {
+  background: #357ABD;
+}
+
+.info-message {
+  margin-top: 10px;
+  size: 5px;
+  color: rgb(99, 132, 99);
+  font-weight: bold;
+}
+
+
+
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #4a90e2;
+}
+
+.patient-profile {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} */

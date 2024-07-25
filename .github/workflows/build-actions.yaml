@@ -1,4 +1,71 @@
-# Basic workflow to ensure the code shipped builds correctly
+# # Basic workflow to ensure the code shipped builds correctly and builds Docker images
+
+# on:
+#   workflow_dispatch:
+#   push:
+#     paths: 
+#       - 'backend/**/*.java'
+#       - 'frontend/**/*.js'
+#   pull_request:
+#     types: [review_requested]
+
+# jobs:
+#   build-backend:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v4
+#     - name: Set up JDK
+#       uses: actions/setup-java@v4
+#       with:
+#         distribution: 'temurin'
+#         java-version: '21'
+#     - name: Build
+#       working-directory: ./backend
+#       run: mvn -B package --file pom.xml
+
+#     # New steps for Docker
+#     - name: Set up Docker Buildx 
+#       uses: docker/setup-buildx-action@v2
+#     - name: Logging in to Docker Hub
+#       uses: docker/
+#       with:
+#         username: 
+#         password:
+#     - name: Build Docker image for backend 
+#       run: docker build -t my-backend:latest ./backend
+#     - name: Push Docker image for backend
+#       run: docker push my-backend:latest
+
+#   build-frontend:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v4
+#     - name: Set up Node
+#       uses: actions/setup-node@v4
+#       with:
+#         node-version: 18
+#     - name: Install dependencies
+#       working-directory: ./frontend
+#       run: npm ci
+#     - name: Build
+#       working-directory: ./frontend
+#       run: npm run build
+
+#     # New steps for Docker
+#     - name: Set up Docker Buildx
+#       uses: docker/setup-buildx-action@v2
+#     - name: Logging in to Docker Hub
+#       uses: docker/
+#       with:
+#         username: 
+#         password: 
+#     - name: Build Docker image for frontend 
+#       run: docker build -t my-frontend:latest ./frontend
+#     - name: Push Docker image for frontend
+#       run: docker push my-frontend:latest
+
+
+
 
 on:
   workflow_dispatch:
@@ -22,6 +89,14 @@ jobs:
     - name: Build
       working-directory: ./backend
       run: mvn -B package --file pom.xml
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    - name: Log in to Docker Hub
+      run: echo "Docker@12345" | docker login -u "lavanya66" --password-stdin
+    - name: Build Docker image for backend
+      run: docker build -t lavanya66/patientallergy:backend ./backend
+    - name: Push Docker image for backend
+      run: docker push lavanya66/patientallergy:backend
 
   build-frontend:
     runs-on: ubuntu-latest
@@ -37,3 +112,12 @@ jobs:
     - name: Build
       working-directory: ./frontend
       run: npm run build
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    - name: Log in to Docker Hub
+      run: echo "Docker@12345" | docker login -u "lavanya66" --password-stdin
+    - name: Build Docker image for frontend
+      run: docker build -t lavanya66/patientallergy:frontend ./frontend
+    - name: Push Docker image for frontend
+      run: docker push lavanya66/patientallergy:frontend
+      
