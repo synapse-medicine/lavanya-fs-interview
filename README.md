@@ -50,4 +50,20 @@ List what you would improve in the codebase (current or in your new feature) in 
 > List here what you would improve in the provided codebase as well as what you could improve in your new feature
 > if you had more time
 
-* ...
+* In the Existing code base
+     1. Implementing the repository classes using the JPA framework, so that the boilerplate code can be reduced.
+     2. Implementing the Exception handling in backend classes like Controller and Repository etc, so that exceptions can be handled gracefully.
+     3. Implementing the Unit test cases for backend classes like Controller and Repository.
+* In the new feature implemented
+     1. Implementing the repository classes using the JPA framework.
+     2. Completed the search and github actions CI updation.
+     3. Implemented the Exception handling and unit test cases, would like to implement more unit test cases in terms of negative cases if I had more time.
+* Other improvements made
+     1. Used actuators and exposed the url for health checks.
+     2. Dockerfile changes - using the non root user and exposing health checks.
+     3. Updated the CI to build docker images, login to my dockerhub account repo and push the images there.
+* Other improvements could be made in future
+     1. Improvising the docker file to make it efficient by using non root user, multilayer building and using lower base images etc.
+     2. Separating the configuration details of the application from the docker image and using configmaps if deploying in kubernetes environment so that we dont 
+        have to build docker images every time a configuration change is to be made.
+  
