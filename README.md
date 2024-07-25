@@ -57,7 +57,7 @@ List what you would improve in the codebase (current or in your new feature) in 
 * In the new feature implemented
      1. Implementing the repository classes using the JPA framework.
      2. Completed the search and github actions CI updation.
-     3. Implemented the Exception handling and unit test cases, would like to implement more unit test cases in terms of negative cases if I had more time.
+     3. Implemented the Exception handling and unit test cases, would like to implement more unit test cases in terms of negative test cases.
 * Other improvements made
      1. Used actuators and exposed the url for health checks.
      2. Dockerfile changes - using the non root user and exposing health checks.
