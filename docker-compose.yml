@@ -6,13 +6,12 @@ version: '3.7'
 services: 
   backend:
     build: ./backend
-    image: itw_backend
-    ports: 
-      - "8080"
-    network_mode: "host"
+    image: backend
+    ports:
+      - "8080:8080"
   frontend:
     build: ./frontend
-    image: itw_frontend
-    ports: 
-      - "8081:80"
+    image: frontend
+    ports:
+      - "80:80"
 

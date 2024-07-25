@@ -9,7 +9,7 @@ const PatientProfile = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/v1/patients/${id}`, {
+    fetch(`/api/v1/patients/${id}`, {
       method: "GET",
       mode: "cors",
     })
